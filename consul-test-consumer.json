@@ -1,0 +1,27 @@
+{
+    "service": {
+		"token": "042847cc-65c0-9e00-e237-60875214e1f6",
+		"name": "consul-test-consumer",
+		"tags": ["test","consumer"],
+		"port": 5000,
+		"connect": {
+			"sidecar_service": {
+			"proxy": {
+				"upstreams":[
+				{
+					"destination_name": "consul-test-provider",
+					"local_bind_port": 6001
+				}
+				]
+			}
+			}
+		},
+		"check": {
+			"id": "consul-test-consumer",
+			"name": "consul-test-consumer tcp port check",
+			"tcp": "127.0.0.1:5000",
+			"interval": "15s",
+			"timeout": "3s"
+		}
+    }
+}
