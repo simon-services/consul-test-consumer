@@ -1,6 +1,6 @@
 {
     "service": {
-		"token": "042847cc-65c0-9e00-e237-60875214e1f6",
+		"token": "{{ consul-test-consumer-service-token }}",
 		"name": "consul-test-consumer",
 		"tags": ["test","consumer"],
 		"port": 5000,
